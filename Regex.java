@@ -19,20 +19,20 @@ public class Regex {
 	  
 //	  Pattern p = Pattern.compile("([^\\d]+)(\\d+)( - )([^\\s]+) \\(([^\\s]+)-([^\\s]+)\\)");
 	private static final String CURSO_PATTERN_STRING = 
-			  "(" +															// $1 total match
+			  "(" +											// $1 total match
 				"(" + CURSO_PRECEEDING_CHARS + ")" +						// $2 Preceeding chars
-				"(" + CURSO_NUMERO + ")" +									// $3 Código do Curso
-				"(" + CURSO_SEPARATOR + ")" +								// $4 Hifen
-				"(" + CURSO_NOME + ")" +									// $5 Nome do curso
-				CURSO_INICIO_PARENTESES + 									//    Antes do período
-				"(" + CURSO_TIPO_PERIODO + ")" +							// $6 Tipo do Período
-				HIFEN +														//    Hifen
-				"(" + CURSO_CAMPUS + ")" +									// $7 Campus do Curso
-				CURSO_FIM_PARENTESES +										//    Parênteses direito
+				"(" + CURSO_NUMERO + ")" +							// $3 Cï¿½digo do Curso
+				"(" + CURSO_SEPARATOR + ")" +							// $4 Hifen
+				"(" + CURSO_NOME + ")" +							// $5 Nome do curso
+				CURSO_INICIO_PARENTESES + 							//    Antes do perï¿½odo
+				"(" + CURSO_TIPO_PERIODO + ")" +						// $6 Tipo do Perï¿½odo
+				HIFEN +										//    Hifen
+				"(" + CURSO_CAMPUS + ")" +							// $7 Campus do Curso
+				CURSO_FIM_PARENTESES +								//    Parï¿½nteses direito
 				WHITESPACES +
 				CURSO_VAGAS_STR + 
 				WHITESPACES +
-				"(" + CURSO_NUM_VAGAS + ")" +								// $8 Número de vagas
+				"(" + CURSO_NUM_VAGAS + ")" +							// $8 Nï¿½mero de vagas
 				WHITESPACES + 
 			  ")";
 				
@@ -46,32 +46,30 @@ public class Regex {
 	  public static final int CURSO_GROUP_VAGAS = 8;
 	  
 	private static final String CANDIDATO_INSCRICAO = "\\d+-\\d";
-	private static final String CANDIDATO_NOME = "[^\\s{2}]+"; // até encontrar dois espaços
-	private static final String CANDIDATO_IS_COTISTA = "[(SIM)(NÃO)]";
-	private static final String CANDIDATO_NOTA = "[^\\w]+"; // qualquer coisa menos espaços 
-	private static final String CANDIDATO_TOTAL_PARCIAL = "[^\\w]+"; // qualquer coisa menos espaços;
-//	private static final String CANDIDATO_TOTAL = null;
-//	private static final String CANDIDATO_TOTAL = null;
-	private static final String CANDIDATO_ESCORE_FINAL = "[^\\w]+"; // qualquer coisa menos espaços;;
-	private static final String CANDIDATO_CLASSIFICACAO = "[^\\w]+"; // qualquer coisa menos espaços;;
-	private static final String CANDIDATO_SITUACAO = "[^\\w]+"; // qualquer coisa menos espaços;;
+	private static final String CANDIDATO_NOME = "[^\\s{2}]+"; // atï¿½ encontrar dois espaï¿½os
+	private static final String CANDIDATO_IS_COTISTA = "[(SIM)(Nï¿½O)]";
+	private static final String CANDIDATO_NOTA = "[^\\w]+"; // qualquer coisa menos espaï¿½os 
+	private static final String CANDIDATO_TOTAL_PARCIAL = "[^\\w]+"; // qualquer coisa menos espaï¿½os;
+	private static final String CANDIDATO_ESCORE_FINAL = "[^\\w]+"; // qualquer coisa menos espaï¿½os;;
+	private static final String CANDIDATO_CLASSIFICACAO = "[^\\w]+"; // qualquer coisa menos espaï¿½os;;
+	private static final String CANDIDATO_SITUACAO = "[^\\w]+"; // qualquer coisa menos espaï¿½os;;
 	
 	  
 	  private static final String CANDIDATO_PATTERN_STRING =
 			  "(" +															
-				"(" + CANDIDATO_INSCRICAO + ")" +						// $1 Número de inscrição
+				"(" + CANDIDATO_INSCRICAO + ")" +						// $1 Nï¿½mero de inscriï¿½ï¿½o
 				WHITESPACES +
 				"(" + CANDIDATO_NOME + ")" +							// $2 Nome do candidato
 				WHITESPACES  +									
-				"(" + CANDIDATO_IS_COTISTA + ")" +						// $3 Se candidato é cotista
+				"(" + CANDIDATO_IS_COTISTA + ")" +						// $3 Se candidato ï¿½ cotista
 				WHITESPACES +														
 				"(" + CANDIDATO_NOTA + ")" +							// $4 Nota (Conhecimentos Gerais)
 				WHITESPACES +										
 				"(" + CANDIDATO_TOTAL_PARCIAL + ")" +						// $5 Nota Total P1
 				WHITESPACES +
-				"(" + CANDIDATO_NOTA + ")" +							// $6 Nota (Redação)
+				"(" + CANDIDATO_NOTA + ")" +							// $6 Nota (Redaï¿½ï¿½o)
 				WHITESPACES + 
-				"(" + CANDIDATO_NOTA + ")" +							// $7 Nota (Português)
+				"(" + CANDIDATO_NOTA + ")" +							// $7 Nota (Portuguï¿½s)
 				WHITESPACES + 
 				"(" + CANDIDATO_NOTA + ")" +							// $8 Nota (Lingua Estrangeira)
 				WHITESPACES + 
@@ -85,14 +83,14 @@ public class Regex {
 				WHITESPACES +
 				"(" + CANDIDATO_ESCORE_FINAL + ")" +					// $10 Nota (Escore Final)
 				WHITESPACES +
-				"(" + CANDIDATO_CLASSIFICACAO + ")" +					// $11 Classificação (no curso)
+				"(" + CANDIDATO_CLASSIFICACAO + ")" +					// $11 Classificaï¿½ï¿½o (no curso)
 				WHITESPACES +
-				"(" + CANDIDATO_SITUACAO + ")" + 						// $12 Situação do Candidato
+				"(" + CANDIDATO_SITUACAO + ")" + 						// $12 Situaï¿½ï¿½o do Candidato
 			  ")";
 	  	  
 	  
 //	  15482-4  ALANA CAROLINA GOMES               SIM     59,0   59,0    90 45,0  6,0I 141,0   29,0  35,0  64,0   264,0   43 AP-COTAS
-//	  36538-3  ALEX YUTAKA SARKHEIL               NÃO     36,5   36,5    NA 31,5  0,0I   --    30,0  14,5  44,5     --    -- RP      
+//	  36538-3  ALEX YUTAKA SARKHEIL               Nï¿½O     36,5   36,5    NA 31,5  0,0I   --    30,0  14,5  44,5     --    -- RP      
 	  
 	  public static final Pattern CANDIDATO = Pattern.compile(CANDIDATO_PATTERN_STRING);
 	  public static final int CANDIDATO_GROUP_ALL = 1;
@@ -111,11 +109,7 @@ public class Regex {
 	  public static final int CANDIDATO_GROUP_ESCORE_FINAL = 14;
 	  public static final int CANDIDATO_GROUP_CLASSIFICACAO = 15;
 	  public static final int CANDIDATO_GROUP_SITUACAO = 16;
-	  
-	  
-	  
-	  
-	  
+	   
 	  
 	  
 	  
